@@ -28,6 +28,10 @@ function LeftSidebar({condition}) {
       useEffect(() => {
         fetchUser();
       }, []);
+  
+      useEffect(() => {
+        fetchUser();
+      }, []);
 
   return (
     <div className='leftsidebar' style={{left:condition? "0%": "-160%"}}>
