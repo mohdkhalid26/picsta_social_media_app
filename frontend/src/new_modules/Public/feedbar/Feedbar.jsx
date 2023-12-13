@@ -105,7 +105,7 @@ const customImg = "https://tse1.mm.bing.net/th?id=OIP.PY7JG8p0h1zf2yRKgxhAaQHaHa
     <div  className="feedbar">
       {fileModal ? (
         <div className="file-modal">
-          <label htmlFor="file">Paste Image Address</label>
+          <label htmlFor="file">Paste Image Url Address</label>
           <input type="text" onChange={(e) => getContent(e)} value={content} />
         </div>
       ) : (
