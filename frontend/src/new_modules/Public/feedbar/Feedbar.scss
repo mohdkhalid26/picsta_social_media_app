@@ -186,6 +186,16 @@
             text-align: center;
             font-size: 1.8rem;
             margin-left: 55%;
+            
+        }
+        .del-modal{
+          font-size: large;
+          position: absolute;
+          right: 5%;
+          top: 16%;
+          padding: 5px;
+          background-color: skyblue;
+          border-radius: 16px;
         }
     }
     .caption-div{
@@ -282,6 +292,9 @@
       b{
         font-size: 1.6rem;
       }
+      .del-modal{
+        font-size: 14px;
+      }
       }
   }
   }
@@ -319,6 +332,9 @@
       }
       b{
         font-size: 1.8rem;
+      }
+      .del-modal{
+        font-size: large;
       }
     
     }
@@ -457,6 +473,9 @@
           b{
               font-size: 1.4rem;
           }
+          .del-modal{
+            font-size: 12px;
+          }
       }
       .caption-div{
           font-size: 12px;
@@ -545,6 +564,10 @@
               font-size: 1.2rem;
               right: -2%;
           }
+          .del-modal{
+            top: 23%;
+            font-size: 10px;
+          }
       }
       
   }
@@ -605,6 +628,10 @@ font-size: 1rem;
           }
           b{
 font-size: 1rem;
+          }
+          .del-modal{
+            top: 23%;
+            font-size: 8px;
           }
       }
       

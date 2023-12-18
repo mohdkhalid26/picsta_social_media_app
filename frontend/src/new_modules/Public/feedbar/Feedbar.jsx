@@ -15,6 +15,7 @@ function Feedbar() {
   const [caption, setCaption] = useState("");
   const [content, setContent] = useState("");
   const [fileModal, setFileModal] = useState(false);
+  const [delModal, setdelModal] = useState(false);
   const [postData, setPostData] = useState([]);
   const [userProfile, setUserProfile] = useState([]);
   const [userDetail, setUserDetail] = useState([]);
@@ -106,7 +107,7 @@ function deletePost(index) {
 let updatePost = postData.filter((d,i)=>{
   return i != index
 })
-
+setdelModal(!delModal)
 axios.put(`https://6560c27c83aba11d99d1778b.mockapi.io/user_details/${profileId}`, 
         {
         post: updatePost
@@ -166,7 +167,12 @@ axios.put(`https://6560c27c83aba11d99d1778b.mockapi.io/user_details/${profileId}
               <img src={dp} width={52} alt="" />
               <span>{userProfile.name}</span>
               <i>{data.date}</i>
-              <b style={{cursor:"pointer"}} onClick={()=>deletePost(index)}><HiDotsVertical /></b>
+              <b style={{cursor:"pointer"}} onClick={()=>setdelModal(!delModal)}><HiDotsVertical /></b>
+              {
+                delModal ? <div className="del-modal" style={{cursor:"pointer"}} onClick={()=>deletePost(index)}>
+                  Post Delete
+                </div>:""
+              }
             </div>
 
             {data.caption ? (
