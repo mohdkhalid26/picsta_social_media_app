@@ -101,6 +101,21 @@ const customImg = "https://tse1.mm.bing.net/th?id=OIP.PY7JG8p0h1zf2yRKgxhAaQHaHa
     }
   };
 
+function deletePost(index) {
+  
+let updatePost = postData.filter((d,i)=>{
+  return i != index
+})
+
+axios.put(`https://6560c27c83aba11d99d1778b.mockapi.io/user_details/${profileId}`, 
+        {
+        post: updatePost
+        }
+        )
+        .then((res) => fetchPost())
+        .catch((err)=> alert(err))
+}
+
   return (
     <div  className="feedbar">
       {fileModal ? (
@@ -151,7 +166,7 @@ const customImg = "https://tse1.mm.bing.net/th?id=OIP.PY7JG8p0h1zf2yRKgxhAaQHaHa
               <img src={dp} width={52} alt="" />
               <span>{userProfile.name}</span>
               <i>{data.date}</i>
-              <b><HiDotsVertical /></b>
+              <b style={{cursor:"pointer"}} onClick={()=>deletePost(index)}><HiDotsVertical /></b>
             </div>
 
             {data.caption ? (
